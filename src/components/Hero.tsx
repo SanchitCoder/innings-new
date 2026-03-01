@@ -1,5 +1,5 @@
 import { Shield, Trophy, Zap, Star } from 'lucide-react';
-import logoImg from '../assets/Innings-logo.jpeg';
+import logoImg from '../assets/Innings_new_logo.png';
 
 const stats = [
   { value: '10L+', label: 'Active Players' },

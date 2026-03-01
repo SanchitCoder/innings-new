@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Youtube, Instagram, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
-import logoImg from '../assets/Innings-logo.jpeg';
+import logoImg from '../assets/Innings_new_logo.png';
 
 const quickLinks = [
   { label: 'Home', href: '#home' },

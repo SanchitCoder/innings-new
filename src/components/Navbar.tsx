@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logoImg from '../assets/Innings-logo.jpeg';
+import logoImg from '../assets/Innings_new_logo.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
