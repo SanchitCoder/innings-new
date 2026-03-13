@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-bg text-white font-poppins">
+    <div className="min-h-screen min-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden bg-dark-bg text-white font-poppins">
       <Navbar />
       <Hero />
       <Features />

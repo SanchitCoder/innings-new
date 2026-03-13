@@ -59,7 +59,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
+    <section id="testimonials" className="py-16 sm:py-24 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
       <div
         className="absolute inset-0 opacity-5"
         style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #40C900 0%, transparent 60%)' }}
@@ -77,11 +77,11 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="animate-on-scroll group relative rounded-2xl p-6 border border-dark-border transition-all duration-300 hover:-translate-y-2 hover:border-green-primary/30 hover:shadow-xl hover:shadow-green-primary/5"
+              className="animate-on-scroll group relative rounded-2xl p-4 sm:p-6 border border-dark-border transition-all duration-300 hover:-translate-y-2 hover:border-green-primary/30 hover:shadow-xl hover:shadow-green-primary/5 min-w-0"
               style={{ background: '#12121f', transitionDelay: `${i * 70}ms` }}
             >
               <div className="absolute top-4 right-4 opacity-20">
@@ -113,12 +113,12 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-gray-400 text-sm leading-relaxed">{t.text}</p>
+              <p className="text-gray-400 text-sm leading-relaxed break-words">{t.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-8 animate-on-scroll">
+        <div className="mt-12 sm:mt-16 flex flex-wrap justify-center items-center gap-6 sm:gap-8 animate-on-scroll">
           <div className="text-center">
             <p className="text-4xl font-black text-green-primary">4.8/5</p>
             <div className="flex justify-center gap-1 my-1">

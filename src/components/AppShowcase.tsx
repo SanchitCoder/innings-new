@@ -1,4 +1,4 @@
-import { Download, Star, CheckCircle2 } from 'lucide-react';
+import { Star, CheckCircle2, Download } from 'lucide-react';
 
 const appScreens = [
   {
@@ -120,7 +120,7 @@ const appScreens = [
 
 export default function AppShowcase() {
   return (
-    <section id="app" className="py-24 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
+    <section id="app" className="py-16 sm:py-24 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -129,12 +129,11 @@ export default function AppShowcase() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center min-w-0">
           <div className="animate-on-scroll-left">
             <p className="section-subtitle">Mobile App</p>
             <h2 className="section-title mb-6">
-              Download the{' '}
-              <span className="gradient-text">Innings App</span>{' '}
+              Download the <span className="gradient-text">Innings App</span>{' '}
               &amp; Start Winning
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
@@ -166,23 +165,26 @@ export default function AppShowcase() {
               <span className="text-gray-400 text-sm">from 2.4L+ reviews</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#"
-                className="flex items-center gap-3 btn-primary py-4 px-6 rounded-xl"
-                style={{ boxShadow: '0 0 25px rgba(64,201,0,0.25)' }}
+                className="flex items-center justify-center gap-3 py-3 sm:py-4 px-4 sm:px-6 rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105 active:scale-95 min-h-[44px]"
+                style={{
+                  background: 'linear-gradient(135deg, #40C900, #2fa000)',
+                  boxShadow: '0 0 25px rgba(64,201,0,0.25)',
+                }}
               >
-                <Download size={20} />
+                <Download size={20} className="flex-shrink-0" />
                 <div className="text-left">
-                  <p className="text-xs opacity-80">Get it on</p>
+                  <p className="text-xs opacity-90">Get it on</p>
                   <p className="font-bold text-sm">Google Play</p>
                 </div>
               </a>
               <a
                 href="#"
-                className="flex items-center gap-3 bg-dark-card border border-dark-border hover:border-green-primary/40 py-4 px-6 rounded-xl transition-all duration-300"
+                className="flex items-center justify-center gap-3 py-3 sm:py-4 px-4 sm:px-6 rounded-xl bg-dark-card border border-dark-border text-white font-semibold transition-all duration-300 hover:border-green-primary/40 hover:scale-105 active:scale-95 min-h-[44px]"
               >
-                <Download size={20} className="text-white" />
+                <Download size={20} className="flex-shrink-0 text-white" />
                 <div className="text-left">
                   <p className="text-xs text-gray-400">Available on</p>
                   <p className="font-bold text-sm text-white">App Store</p>
@@ -191,15 +193,15 @@ export default function AppShowcase() {
             </div>
           </div>
 
-          <div className="animate-on-scroll-right">
-            <div className="grid grid-cols-2 gap-4 relative">
+          <div className="animate-on-scroll-right min-w-0">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 relative">
               <div className="absolute inset-0 rounded-3xl blur-3xl opacity-15"
                 style={{ background: 'radial-gradient(circle, #40C900, transparent)' }}
               />
               {appScreens.map((screen, i) => (
                 <div
                   key={screen.title}
-                  className={`rounded-2xl overflow-hidden border border-dark-border/60 hover:border-green-primary/30 transition-all duration-300 hover:-translate-y-1 ${i % 2 === 1 ? 'mt-6' : ''}`}
+                  className={`rounded-xl sm:rounded-2xl overflow-hidden border border-dark-border/60 hover:border-green-primary/30 transition-all duration-300 hover:-translate-y-1 ${i % 2 === 1 ? 'mt-4 sm:mt-6' : ''}`}
                   style={{ background: '#12121f' }}
                 >
                   <div className={`bg-gradient-to-br ${screen.bg} px-4 pt-3 pb-1`}>

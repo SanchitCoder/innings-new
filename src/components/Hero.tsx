@@ -1,5 +1,6 @@
 import { Shield, Trophy, Zap, Star } from 'lucide-react';
 import logoImg from '../assets/Innings_new_logo.png';
+import { WHATSAPP_LINK } from '../constants/contact';
 
 const stats = [
   { value: '10L+', label: 'Active Players' },
@@ -52,19 +53,23 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-green-primary/10 border border-green-primary/30 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 bg-green-primary rounded-full animate-pulse" />
-              <span className="text-green-primary text-sm font-medium">India's #1 Skill Gaming Platform</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 relative z-10 w-full min-w-0">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center min-w-0">
+          <div className="text-center lg:text-left min-w-0">
+            <div className="inline-flex items-center gap-2 bg-green-primary/10 border border-green-primary/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
+              <div className="w-2 h-2 bg-green-primary rounded-full animate-pulse flex-shrink-0" />
+              <span className="text-green-primary text-xs sm:text-sm font-medium text-center">India's #1 Skill Gaming Platform</span>
             </div>
 
             <div className="mb-4">
-              <img src={logoImg} alt="Innings" className="h-16 md:h-20 w-auto object-contain mx-auto lg:mx-0 rounded" />
+              <img 
+                src={logoImg} 
+                alt="Innings" 
+                className="h-16 md:h-20 w-auto object-contain mx-auto lg:mx-0 rounded-2xl border-2 border-green-primary/20 shadow-xl shadow-green-primary/15 transition-all duration-300 hover:border-green-primary/40 hover:shadow-green-primary/25 p-2 bg-dark-card/50 backdrop-blur-sm" 
+              />
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+            <h1 className="text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 break-words">
               Your All-In-One{' '}
               <span
                 className="bg-clip-text text-transparent"
@@ -75,21 +80,23 @@ export default function Hero() {
               &amp; Sports Engagement Platform
             </h1>
 
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 break-words">
               Join millions of sports fans on Innings — where your cricket knowledge, game skills, and passion transform into real rewards. Compete, engage, and win every day.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10">
               <a
-                href="#pricing"
-                className="btn-primary text-lg py-4 px-8 animate-pulse-green text-center"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 animate-pulse-green text-center min-h-[44px] flex items-center justify-center"
                 style={{ boxShadow: '0 0 30px rgba(64,201,0,0.3)' }}
               >
                 Get Innings ID
               </a>
               <a
                 href="#app"
-                className="btn-outline text-lg py-4 px-8 text-center"
+                className="btn-outline text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 text-center min-h-[44px] flex items-center justify-center"
               >
                 Download App
               </a>
@@ -105,24 +112,24 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative">
+          <div className="relative flex justify-center lg:justify-end min-w-0 w-full">
+            <div className="relative w-full max-w-md lg:max-w-none">
               <div
-                className="absolute inset-0 rounded-3xl blur-3xl opacity-20"
+                className="absolute inset-0 rounded-3xl blur-3xl opacity-20 pointer-events-none"
                 style={{ background: 'radial-gradient(circle, #40C900 0%, transparent 70%)' }}
               />
-              <div className="relative grid grid-cols-2 gap-4">
+              <div className="relative grid grid-cols-2 gap-2 sm:gap-4 min-w-0">
                 <div
-                  className="col-span-2 rounded-2xl p-6 border border-green-primary/20"
+                  className="col-span-2 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-green-primary/20 min-w-0"
                   style={{ background: 'linear-gradient(135deg, rgba(64,201,0,0.15) 0%, rgba(64,201,0,0.05) 100%)' }}
                 >
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 min-w-0">
                     <div className="w-10 h-10 bg-green-primary rounded-xl flex items-center justify-center">
                       <Trophy size={20} className="text-white" />
                     </div>
-                    <div>
-                      <p className="text-white font-bold">Live Fantasy Match</p>
-                      <p className="text-gray-400 text-sm">IND vs AUS — T20 Series</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-white font-bold text-sm sm:text-base truncate">Live Fantasy Match</p>
+                      <p className="text-gray-400 text-xs sm:text-sm truncate">IND vs AUS — T20 Series</p>
                     </div>
                     <div className="ml-auto">
                       <span className="bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full border border-red-500/30 animate-pulse">LIVE</span>
@@ -140,7 +147,7 @@ export default function Hero() {
                     className="card-dark text-center"
                     style={{ background: 'rgba(18,18,31,0.9)' }}
                   >
-                    <p className="text-2xl md:text-3xl font-black text-green-primary">{stat.value}</p>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-green-primary">{stat.value}</p>
                     <p className="text-gray-400 text-xs mt-1">{stat.label}</p>
                   </div>
                 ))}

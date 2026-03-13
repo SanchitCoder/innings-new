@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, MessageCircle } from 'lucide-react';
+import { WHATSAPP_NUMBER, WHATSAPP_LINK, SUPPORT_EMAIL, ENQUIRY_EMAIL } from '../constants/contact';
 
 const faqs = [
   {
@@ -40,7 +41,7 @@ const faqs = [
   },
   {
     question: 'How do I contact Innings customer support?',
-    answer: 'You can reach our 24/7 support team via live chat on the app or website, email at support@inningsapp.com, or through our toll-free number. Pro and Elite members receive priority support with faster response times. We typically respond to all queries within 30 minutes during peak hours and within 2 hours during off-peak times.',
+    answer: `You can reach our 24/7 support team via live chat on the app or website, email at ${SUPPORT_EMAIL} (support) or ${ENQUIRY_EMAIL} (enquiries), or WhatsApp at +19123423273. Pro and Elite members receive priority support with faster response times. We typically respond to all queries within 30 minutes during peak hours and within 2 hours during off-peak times.`,
   },
   {
     question: 'What sports are available on the Innings platform?',
@@ -56,7 +57,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-dark-bg relative overflow-hidden">
+    <section id="faq" className="py-16 sm:py-24 bg-dark-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-primary/30 to-transparent" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,8 +83,9 @@ export default function FAQ() {
               }}
             >
               <button
+                type="button"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center gap-3 px-6 py-5 text-left group"
+                className="w-full flex items-center gap-3 px-4 sm:px-6 py-4 sm:py-5 text-left group min-h-[44px] touch-manipulation"
               >
                 <div
                   className="flex-shrink-0 w-7 h-7 rounded-md flex items-center justify-center transition-all duration-200"
@@ -104,8 +106,8 @@ export default function FAQ() {
               </button>
 
               {openIndex === i && (
-                <div className="px-6 pb-6 pt-0 pl-16">
-                  <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+                <div className="px-4 sm:px-6 pb-6 pt-0 pl-4 sm:pl-16">
+                  <p className="text-gray-400 text-sm leading-relaxed break-words">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -113,17 +115,34 @@ export default function FAQ() {
         </div>
 
         <div
-          className="mt-12 rounded-2xl p-8 text-center animate-on-scroll border border-dark-border"
+          className="mt-12 rounded-2xl p-5 sm:p-8 text-center animate-on-scroll border border-dark-border"
           style={{ background: '#12121f' }}
         >
-          <h3 className="text-white font-bold text-xl mb-3">Still have questions?</h3>
-          <p className="text-gray-400 text-sm mb-6">Our support team is available 24/7 to help you with anything you need.</p>
-          <a
-            href="mailto:support@inningsapp.com"
-            className="btn-primary inline-block"
-          >
-            Contact Support
-          </a>
+          <h3 className="text-white font-bold text-lg sm:text-xl mb-3">Still have questions?</h3>
+          <p className="text-gray-400 text-xs sm:text-sm mb-6 break-words">Our support team is available 24/7 to help you. Reach us on WhatsApp at {WHATSAPP_NUMBER}, or by email: {SUPPORT_EMAIL} (support) and {ENQUIRY_EMAIL} (enquiries).</p>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto"
+            >
+              <MessageCircle size={18} />
+              <span className="truncate">WhatsApp {WHATSAPP_NUMBER}</span>
+            </a>
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="btn-outline inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto break-all text-center"
+            >
+              Support: {SUPPORT_EMAIL}
+            </a>
+            <a
+              href={`mailto:${ENQUIRY_EMAIL}`}
+              className="btn-outline inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto break-all text-center"
+            >
+              Enquiry: {ENQUIRY_EMAIL}
+            </a>
+          </div>
         </div>
       </div>
     </section>

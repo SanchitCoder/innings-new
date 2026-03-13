@@ -1,4 +1,5 @@
 import { Shield, Zap, Trophy, Users, TrendingUp, Headphones } from 'lucide-react';
+import { WHATSAPP_NUMBER, WHATSAPP_LINK } from '../constants/contact';
 
 const reasons = [
   {
@@ -39,7 +40,7 @@ const reasons = [
   {
     icon: Headphones,
     title: '24/7 Dedicated Support',
-    description: 'Our expert support team is available around the clock via live chat, email, and phone to resolve any issues and ensure your experience on Innings is always smooth.',
+    description: `Our expert support team is available around the clock via live chat, email, and WhatsApp (${WHATSAPP_NUMBER}) to resolve any issues and ensure your experience on Innings is always smooth.`,
     highlight: 'Always On',
     color: '#7A001E',
   },
@@ -47,7 +48,7 @@ const reasons = [
 
 export default function WhyChoose() {
   return (
-    <section id="why" className="py-24 bg-dark-bg relative overflow-hidden">
+    <section id="why" className="py-16 sm:py-24 bg-dark-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-primary/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,13 +63,13 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {reasons.map((reason, i) => {
             const Icon = reason.icon;
             return (
               <div
                 key={reason.title}
-                className="animate-on-scroll group relative rounded-2xl p-8 border border-dark-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-green-primary/30"
+                className="animate-on-scroll group relative rounded-2xl p-5 sm:p-8 border border-dark-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-green-primary/30"
                 style={{ background: '#12121f', transitionDelay: `${i * 80}ms` }}
               >
                 <div
@@ -105,21 +106,23 @@ export default function WhyChoose() {
         </div>
 
         <div
-          className="mt-16 rounded-3xl p-10 text-center animate-on-scroll"
+          className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center animate-on-scroll"
           style={{
             background: 'linear-gradient(135deg, rgba(64,201,0,0.12) 0%, rgba(122,0,30,0.12) 100%)',
             border: '1px solid rgba(64,201,0,0.2)',
           }}
         >
-          <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 break-words">
             Ready to Start Your <span className="gradient-text">Innings</span>?
           </h3>
           <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
             Join over 10 lakh players who are already winning on India's most trusted skill gaming platform. Create your free account in under 2 minutes.
           </p>
           <a
-            href="#pricing"
-            className="btn-primary text-lg py-4 px-10 inline-block"
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-10 inline-block min-h-[44px] flex items-center justify-center"
             style={{ boxShadow: '0 0 30px rgba(64,201,0,0.3)' }}
           >
             Get Innings ID — Free

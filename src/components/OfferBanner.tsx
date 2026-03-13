@@ -1,11 +1,12 @@
 import { Gift, ArrowRight, Star } from 'lucide-react';
+import { WHATSAPP_LINK } from '../constants/contact';
 
 export default function OfferBanner() {
   return (
-    <section className="py-16 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
+    <section className="py-12 sm:py-16 relative overflow-hidden" style={{ background: '#0d0d1a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="rounded-3xl p-10 md:p-14 relative overflow-hidden animate-on-scroll"
+          className="rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 relative overflow-hidden animate-on-scroll"
           style={{
             background: 'linear-gradient(135deg, #7A001E 0%, #5a0016 40%, #0d1508 100%)',
             border: '1px solid rgba(122,0,30,0.4)',
@@ -26,7 +27,7 @@ export default function OfferBanner() {
                 <Gift size={16} className="text-gold" />
                 <span className="text-gold text-sm font-semibold">Limited Time Welcome Bonus</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight break-words">
                 Get{' '}
                 <span
                   className="bg-clip-text text-transparent"
@@ -36,7 +37,7 @@ export default function OfferBanner() {
                 </span>{' '}
                 Bonus on First Deposit
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 break-words">
                 New to Innings? Register today, make your first deposit, and we'll match it with a ₹200 bonus credit added instantly to your Innings Wallet. Use it to join any contest, completely on us.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -56,15 +57,15 @@ export default function OfferBanner() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end w-full">
               <div
-                className="relative rounded-2xl p-8 text-center"
+                className="relative rounded-2xl p-5 sm:p-8 text-center w-full max-w-sm mx-auto md:mx-0"
                 style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(244,197,66,0.3)' }}
               >
                 <div className="mb-4">
                   <p className="text-gray-400 text-sm mb-1">New Player Offer</p>
                   <p
-                    className="text-6xl font-black"
+                    className="text-5xl sm:text-6xl font-black"
                     style={{ background: 'linear-gradient(135deg, #F4C542, #ffda6a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                   >
                     ₹200
@@ -84,7 +85,7 @@ export default function OfferBanner() {
                     </div>
                   ))}
                 </div>
-                <a href="#pricing" className="block btn-primary text-center py-3 text-sm">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block btn-primary text-center py-3 text-sm">
                   Get Innings ID Now
                 </a>
               </div>

@@ -65,7 +65,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-dark-bg relative overflow-hidden">
+    <section id="features" className="py-12 sm:py-20 bg-dark-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-primary/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +80,7 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
           {features.map((feature, i) => {
             const Icon = feature.icon;
             const isGreen = feature.color === 'green';
@@ -103,34 +103,34 @@ export default function Features() {
                   />
                 </div>
                 <h3 className="text-white font-bold text-sm mb-2 leading-snug">{feature.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{feature.description}</p>
+                <p className="text-gray-500 text-xs leading-relaxed break-words">{feature.description}</p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
           <div
-            className="animate-on-scroll rounded-2xl p-8 border border-green-primary/20 text-center"
+            className="animate-on-scroll rounded-2xl p-6 sm:p-8 border border-green-primary/20 text-center"
             style={{ background: 'linear-gradient(135deg, rgba(64,201,0,0.1) 0%, rgba(64,201,0,0.03) 100%)' }}
           >
-            <p className="text-5xl font-black text-green-primary mb-2">500+</p>
+            <p className="text-4xl sm:text-5xl font-black text-green-primary mb-2">500+</p>
             <p className="text-white font-semibold text-lg mb-1">Daily Contests</p>
             <p className="text-gray-400 text-sm">New skill games and fantasy contests launched every single day</p>
           </div>
           <div
-            className="animate-on-scroll rounded-2xl p-8 border border-gold/20 text-center"
+            className="animate-on-scroll rounded-2xl p-6 sm:p-8 border border-gold/20 text-center"
             style={{ background: 'linear-gradient(135deg, rgba(244,197,66,0.1) 0%, rgba(244,197,66,0.03) 100%)' }}
           >
-            <p className="text-5xl font-black text-gold mb-2">₹50Cr+</p>
+            <p className="text-4xl sm:text-5xl font-black text-gold mb-2">₹50Cr+</p>
             <p className="text-white font-semibold text-lg mb-1">Rewards Distributed</p>
             <p className="text-gray-400 text-sm">Real cash prizes paid out to skilled players across India</p>
           </div>
           <div
-            className="animate-on-scroll rounded-2xl p-8 border border-maroon-primary/20 text-center"
+            className="animate-on-scroll rounded-2xl p-6 sm:p-8 border border-maroon-primary/20 text-center"
             style={{ background: 'linear-gradient(135deg, rgba(122,0,30,0.15) 0%, rgba(122,0,30,0.05) 100%)' }}
           >
-            <p className="text-5xl font-black text-maroon-light mb-2">10L+</p>
+            <p className="text-4xl sm:text-5xl font-black text-maroon-light mb-2">10L+</p>
             <p className="text-white font-semibold text-lg mb-1">Registered Players</p>
             <p className="text-gray-400 text-sm">A thriving community of passionate skill gamers across the nation</p>
           </div>

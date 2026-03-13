@@ -1,4 +1,5 @@
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { WHATSAPP_LINK } from '../constants/contact';
 
 const contentBlocks = [
   {
@@ -141,17 +142,17 @@ function IllustrationCard({ type }: { type: string }) {
 
 export default function ContentSection() {
   return (
-    <section className="py-16 bg-dark-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+    <section className="py-12 sm:py-16 bg-dark-bg overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         {contentBlocks.map((block, i) => (
           <div
             key={block.tag}
-            className={`grid lg:grid-cols-2 gap-12 items-center ${block.imageLeft ? 'lg:grid-flow-dense' : ''}`}
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center min-w-0 ${block.imageLeft ? 'lg:grid-flow-dense' : ''}`}
           >
-            <div className={`${block.imageLeft ? 'lg:col-start-2 animate-on-scroll-right' : 'animate-on-scroll-left'}`}>
+            <div className={`min-w-0 ${block.imageLeft ? 'lg:col-start-2 animate-on-scroll-right' : 'animate-on-scroll-left'}`}>
               <p className="section-subtitle">{block.tag}</p>
-              <h2 className="section-title mb-6">{block.title}</h2>
-              <div className="text-gray-400 text-base leading-relaxed space-y-4 mb-8">
+              <h2 className="section-title mb-4 sm:mb-6 break-words">{block.title}</h2>
+              <div className="text-gray-400 text-sm sm:text-base leading-relaxed space-y-4 mb-6 sm:mb-8 break-words">
                 {block.content.split('\n\n').map((para, j) => (
                   <p key={j}>{para}</p>
                 ))}
@@ -164,7 +165,7 @@ export default function ContentSection() {
                   </div>
                 ))}
               </div>
-              <a href="#pricing" className="inline-flex items-center gap-2 btn-primary">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 btn-primary min-h-[44px] w-full sm:w-auto">
                 Get Started <ArrowRight size={16} />
               </a>
             </div>

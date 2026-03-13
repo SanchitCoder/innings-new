@@ -1,4 +1,5 @@
 import { CheckCircle2, Star, Zap, Crown } from 'lucide-react';
+import { WHATSAPP_LINK } from '../constants/contact';
 
 const plans = [
   {
@@ -70,7 +71,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-dark-bg relative overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-24 bg-dark-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-primary/40 to-transparent" />
       <div
         className="absolute inset-0 opacity-5"
@@ -89,14 +90,14 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {plans.map((plan, i) => {
             const Icon = plan.icon;
             return (
               <div
                 key={plan.name}
                 className={`animate-on-scroll relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
-                  plan.popular ? 'scale-105 shadow-2xl' : ''
+                  plan.popular ? 'md:scale-105 shadow-2xl' : ''
                 }`}
                 style={{
                   background: '#12121f',
@@ -114,7 +115,7 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <div className={`p-8 ${plan.popular ? 'pt-12' : ''}`}>
+                <div className={`p-5 sm:p-8 ${plan.popular ? 'pt-10 sm:pt-12' : ''}`}>
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -133,7 +134,9 @@ export default function Pricing() {
                   <p className="text-gray-400 text-sm leading-relaxed mb-6">{plan.description}</p>
 
                   <a
-                    href="#"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block text-center font-bold py-3 px-6 rounded-xl transition-all duration-300 mb-8"
                     style={{
                       background: plan.popular ? plan.color : 'transparent',

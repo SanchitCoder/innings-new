@@ -1,5 +1,6 @@
-import { Facebook, Twitter, Youtube, Instagram, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Facebook, Twitter, Youtube, Instagram, Mail, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
 import logoImg from '../assets/Innings_new_logo.png';
+import { WHATSAPP_NUMBER, WHATSAPP_LINK, WHATSAPP_TEL_LINK, SUPPORT_EMAIL, ENQUIRY_EMAIL } from '../constants/contact';
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
@@ -7,7 +8,6 @@ const quickLinks = [
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Download App', href: '#app' },
-  { label: 'Login', href: '#' },
   { label: 'Register', href: '#' },
 ];
 
@@ -42,14 +42,19 @@ export default function Footer() {
   return (
     <footer id="footer" className="border-t border-dark-border" style={{ background: '#080810' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-12 sm:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <div className="lg:col-span-1">
-            <img src={logoImg} alt="Innings" className="h-14 w-auto object-contain mb-4 rounded" />
+            <img 
+              src={logoImg} 
+              alt="Innings" 
+              className="h-14 w-auto object-contain mb-4 rounded-xl border-2 border-green-primary/20 shadow-lg shadow-green-primary/10 transition-all duration-300 hover:border-green-primary/40 hover:shadow-green-primary/20 p-1.5 bg-dark-card/50 backdrop-blur-sm" 
+            />
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Welcome to Innings — India's premier skill gaming and sports engagement platform. Build your team, compete in live contests, and earn real rewards through your cricket knowledge and strategy.
             </p>
             <div className="flex items-center gap-3">
               {[
+                { icon: MessageCircle, href: WHATSAPP_LINK, label: 'WhatsApp' },
                 { icon: Facebook, href: '#', label: 'Facebook' },
                 { icon: Twitter, href: '#', label: 'Twitter' },
                 { icon: Youtube, href: '#', label: 'YouTube' },
@@ -59,6 +64,8 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="w-9 h-9 rounded-lg flex items-center justify-center border border-dark-border transition-all duration-200 hover:border-green-primary hover:bg-green-primary/10 hover:text-green-primary text-gray-400"
                 >
                   <Icon size={16} />
@@ -115,18 +122,31 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Mail size={16} className="text-green-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-gray-500 text-xs mb-1">Email Support</p>
-                  <a href="mailto:support@inningsapp.com" className="text-gray-300 text-sm hover:text-green-primary transition-colors">
-                    support@inningsapp.com
+                  <p className="text-gray-500 text-xs mb-1">Support</p>
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="text-gray-300 text-sm hover:text-green-primary transition-colors break-all">
+                    {SUPPORT_EMAIL}
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone size={16} className="text-green-primary flex-shrink-0 mt-0.5" />
+                <Mail size={16} className="text-green-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-gray-500 text-xs mb-1">Phone Support</p>
-                  <a href="tel:+918000000000" className="text-gray-300 text-sm hover:text-green-primary transition-colors">
-                    +91 80000 00000
+                  <p className="text-gray-500 text-xs mb-1">Enquiries</p>
+                  <a href={`mailto:${ENQUIRY_EMAIL}`} className="text-gray-300 text-sm hover:text-green-primary transition-colors break-all">
+                    {ENQUIRY_EMAIL}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MessageCircle size={16} className="text-green-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-gray-500 text-xs mb-1">WhatsApp Support</p>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-gray-300 text-sm hover:text-green-primary transition-colors">
+                    {WHATSAPP_NUMBER}
+                  </a>
+                  <span className="text-gray-500 text-xs mx-1">·</span>
+                  <a href={WHATSAPP_TEL_LINK} className="text-gray-300 text-sm hover:text-green-primary transition-colors">
+                    Call
                   </a>
                 </div>
               </div>
@@ -163,8 +183,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-6 border-t border-dark-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
+        <div className="py-6 border-t border-dark-border flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-gray-500 text-xs sm:text-sm break-words">
             © 2026 Innings Gaming Technologies Pvt. Ltd. | All Rights Reserved
           </p>
           <p className="text-gray-600 text-xs text-center md:text-right max-w-sm">
